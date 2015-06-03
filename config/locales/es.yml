@@ -15,3 +15,10 @@ es:
 
     invoice_number: Número Factura
     invoice_date: Expedida el
+
+    company_name: Nombre de la empresa
+    company_direction: Direccion
+    company_codezip: Codigo Postal
+    company_state: Municipio, Localidad ...
+    company_phone: Telefono
+    company_ident_fiscal: Identificacion Fiscal (CIF)
