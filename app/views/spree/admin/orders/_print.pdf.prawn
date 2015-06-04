@@ -1,7 +1,7 @@
 require 'prawn/layout'
 
 render :partial => "header"
-
+move_down 20
 render :partial => "address"
 
 move_down 15

@@ -6,9 +6,9 @@ image im , :at => [0,720], :scale => logo_scale
 
 fill_color "E99323"
 if @hide_prices
-  text I18n.t(:packaging_slip), :align => :right, :style => :bold, :size => 15
+  text Spree.t(:packaging_slip), :align => :right, :style => :bold, :size => 15
 else
-  text I18n.t(:customer_invoice), :align => :right, :style => :bold, :size => 15
+  text Spree.t(:customer_invoice), :align => :right, :style => :bold, :size => 15
 end
 fill_color "000000"
 
@@ -25,7 +25,8 @@ move_down 2
 font "Helvetica", :size => 9
 text "#{I18n.l @order.completed_at.to_date}", :align => :right
 text "", :align => :right
-move_down 40
+
+move_down 2
 fill_color "000000"
 text Spree.t(:company_name), :align => :left, :size => 10
 text Spree.t(:company_direction), :align => :left, :size => 10
