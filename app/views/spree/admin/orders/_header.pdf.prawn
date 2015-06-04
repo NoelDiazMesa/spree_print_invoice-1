@@ -1,7 +1,7 @@
 font "Helvetica"
-im = "#{Rails.root.to_s}/public/assets/#{Spree::PrintInvoice::Config[:print_invoice_logo_path]}"
 
-image im , :at => [0,720] , :scale => 0.50
+im = Rails.application.assets.find_asset(Spree::PrintInvoice::Config[:print_invoice_logo_path])
+image im , :at => [0,720], :scale => logo_scale
 
 
 fill_color "E99323"
