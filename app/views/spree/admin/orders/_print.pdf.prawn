@@ -53,7 +53,7 @@ define_grid(columns: 5, rows: 8, gutter: 10)
 	    shipping << "\n\n#{Spree.t(:via, scope: :print_invoice)} #{@order.shipments.first.shipping_method.name}"
 
 	    data = [[address_cell_billing, address_cell_shipping], [billing, shipping]]
-	    table(data, position: :center, column_widths: [270, 270])
+	    table(data, position: :center, column_widths: [540, 540])
 	  end
 
 	  move_down 10
@@ -126,7 +126,7 @@ define_grid(columns: 5, rows: 8, gutter: 10)
 	  end
 
 	  move_down 30
-	  text Spree::PrintInvoice::Config[:return_message], align: :right, size: 9
+
 	end
 
 	# FOOTER
@@ -140,7 +140,7 @@ define_grid(columns: 5, rows: 8, gutter: 10)
 	      data << [ make_cell(content: Spree::PrintInvoice::Config[:footer_left],  align: :left),
 	                make_cell(content: Spree::PrintInvoice::Config[:footer_right], align: :right) ]
 
-	      table(data, position: :center, column_widths: [270, 270]) do
+	      table(data, position: :center, column_widths: [540, 540]) do
 	        row(0..2).style borders: []
 	      end
 	    end
