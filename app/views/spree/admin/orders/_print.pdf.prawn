@@ -140,7 +140,7 @@ define_grid(columns: 5, rows: 8, gutter: 10)
 	      data << [ make_cell(content: Spree::PrintInvoice::Config[:footer_left],  align: :left),
 	                make_cell(content: Spree::PrintInvoice::Config[:footer_right], align: :right) ]
 
-	      table(data, position: :center, column_widths: [540, 540]) do
+	      table(data, position: :center, column_widths: [1080, 1080]) do
 	        row(0..2).style borders: []
 	      end
 	    end
