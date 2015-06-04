@@ -130,7 +130,6 @@ define_grid(columns: 5, rows: 8, gutter: 10)
 	end
 
 	# FOOTER
-	if Spree::PrintInvoice::Config[:use_footer]
 	  repeat(:all) do
 	    grid([7,0], [7,4]).bounding_box do
 
@@ -145,10 +144,9 @@ define_grid(columns: 5, rows: 8, gutter: 10)
 	      end
 	    end
 	  end
-	end
 
 	# PAGE NUMBER
-	if Spree::PrintInvoice::Config[:use_page_numbers]
+
 	  string  = "#{Spree.t(:page, scope: :print_invoice)} <page> #{Spree.t(:of, scope: :print_invoice)} <total>"
 	  options = {
 	    at: [bounds.right - 155, 0],
@@ -158,4 +156,3 @@ define_grid(columns: 5, rows: 8, gutter: 10)
 	    color: '000000'
 	  }
 	  number_pages string, options
-	end
