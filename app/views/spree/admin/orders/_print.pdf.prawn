@@ -53,7 +53,7 @@ define_grid(columns: 5, rows: 8, gutter: 10)
 	    shipping << "\n\n#{Spree.t(:via, scope: :print_invoice)} #{@order.shipments.first.shipping_method.name}"
 
 	    data = [[address_cell_billing, address_cell_shipping], [billing, shipping]]
-	    table(data, position: :center, column_widths: [540, 540])
+	    table(data, position: :center, column_widths: [1080, 1080])
 	  end
 
 	  move_down 10
