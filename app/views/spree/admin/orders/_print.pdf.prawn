@@ -1,11 +1,9 @@
 define_grid(columns: 5, rows: 8, gutter: 10)
 
 	# HEADER
-	repeat(:all) do
 	  im = Rails.application.assets.find_asset(Spree::PrintInvoice::Config[:print_invoice_logo_path])
 	  if File.exists? im
 	    image im, vposition: :top, height: 40
-	  end
 
 	  grid([0,3], [0,4]).bounding_box do
 	    font 'Helvetica', size: 9
@@ -14,16 +12,16 @@ define_grid(columns: 5, rows: 8, gutter: 10)
 	    text Spree.t(:order_number, number: @order.number), align: :right
 	    move_down 2
 	    text I18n.l(@order.completed_at.to_date), align: :right
+
+	    fill_color "000000"
+        text Spree.t(:company_name), :align => :left, :size => 10
+        text Spree.t(:company_direction), :align => :left, :size => 10
+        text Spree.t(:company_codezip), :align => :left, :size => 10
+        text Spree.t(:company_state), :align => :left, :size => 10
+        text Spree.t(:company_phone), :align => :left, :size => 10
+        text Spree.t(:company_ident_fiscal), :align => :left, :size => 10
 	  end
 	end
-
-	fill_color "000000"
-    text Spree.t(:company_name), :align => :left, :size => 10
-    text Spree.t(:company_direction), :align => :left, :size => 10
-    text Spree.t(:company_codezip), :align => :left, :size => 10
-    text Spree.t(:company_state), :align => :left, :size => 10
-    text Spree.t(:company_phone), :align => :left, :size => 10
-    text Spree.t(:company_ident_fiscal), :align => :left, :size => 10
 
 	# CONTENT
 	grid([1,0], [6,4]).bounding_box do
